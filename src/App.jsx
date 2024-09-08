@@ -4,27 +4,45 @@ function App() {
       <div className="overlay">
         <div className="drawer">
           <h2>Корзина</h2>
-          <div className="cart-item d-flex align-center mb-20">
-            <div style={{backgroundImage: 'url(./img/sneakers/1.jpg)'}} className="cart-item-img">
+          <div className="items">
+            <div className="cart-item d-flex align-center mb-20">
+              <div style={{backgroundImage: 'url(./img/sneakers/1.jpg)'}} className="cart-item-img">
 
+              </div>
+              <div className="m-20">
+                <p className="mb-5">Кроссовки 1</p>
+                <b>12 999 руб.</b>
+              </div>
+              <img className="remove-btn" src="./img/btn-remove.svg" alt="Remove" />
             </div>
-            <div className="m-20">
-              <p className="mb-5">Кроссовки 1</p>
-              <b>12 999 руб.</b>
-            </div>
-            <img className="remove-btn" src="./img/btn-remove.svg" alt="Remove" />
-          </div>
-          <div className="cart-item d-flex align-center mb-20">
-            <div style={{backgroundImage: 'url(./img/sneakers/2.jpg)'}} className="cart-item-img">
+            <div className="cart-item d-flex align-center mb-20">
+              <div style={{backgroundImage: 'url(./img/sneakers/2.jpg)'}} className="cart-item-img">
 
+              </div>
+              <div className="m-20">
+                <p className="mb-5">Кроссовки 2</p>
+                <b>12 999 руб.</b>
+              </div>
+              <img className="remove-btn" src="./img/btn-remove.svg" alt="Remove" />
             </div>
-            <div className="m-20">
-              <p className="mb-5">Кроссовки 2</p>
-              <b>12 999 руб.</b>
-            </div>
-            <img className="remove-btn" src="./img/btn-remove.svg" alt="Remove" />
-          </div>
+            <ul className="cartTotalBlock">
+              <li>
+                <span>Итого:</span>
+                <div>
+
+                </div>
+                <b>21 498 руб.</b>
+              </li>
+              <li>
+                <span>Налог: 5%</span>
+                <div>
+
+                </div>
+                <b>1074 руб.</b>
+              </li>
+            </ul>
         </div>
+          </div>
       </div>
       <header className="d-flex justify-between align-center p-40">
         <div className="d-flex align-center">
