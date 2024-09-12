@@ -1,12 +1,14 @@
 import React from "react";
 
-function Card({name, price, imgUrl}) {
+function Card({name, price, imgUrl, onPlus}) {
     const [isAdded, setIsAdded] = React.useState(false)
 
     const ClickPlus = () => {
-        setIsAdded(!isAdded)        
+        setIsAdded(!isAdded)
+        onPlus();
     }
     
+
 
     return (
         <div className="card">

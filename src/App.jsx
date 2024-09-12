@@ -6,6 +6,7 @@ import Header from "./components/Header";
 
 function App() {
   const [allProducts, setAllProducts] = React.useState([])
+  const [cartProducts, setCartProducts] = React.useState([])
   const [cartOpened, setCartOpened] = React.useState(false) 
 
   React.useEffect(() => {
@@ -16,9 +17,18 @@ function App() {
     })
   }, [])
 
+  const onAddToCart = (element) => {
+    for(let i = 0; i < cartProducts.length; i++){
+      if (element === cartProducts[i]) {
+        return
+      }
+    }
+    setCartProducts(prev => [...cartProducts, element])
+  }
+
   return (
     <div className="wrapper clear">
-      {cartOpened && <Drawer onCloseCart = {() => setCartOpened(false)}/>}
+      {cartOpened && <Drawer cartProducts = {cartProducts} onCloseCart = {() => setCartOpened(false)}/>}
       <Header
         onClickCart = {() => setCartOpened(true)}
       />
@@ -36,6 +46,8 @@ function App() {
              name={element.name}
              price={element.price}
              imgUrl={element.imgUrl}
+             onPlus={() => {onAddToCart(element);
+             }}
             />
           ))}
         </div>
