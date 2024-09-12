@@ -1,12 +1,17 @@
 import React from "react";
 
-var likedStatus = false
-
 function Card({name, price, imgUrl}) {
+    const [isAdded, setIsAdded] = React.useState(false)
+
+    const ClickPlus = () => {
+        setIsAdded(!isAdded)        
+    }
+    
+
     return (
         <div className="card">
             <div className="favorite">
-                <img src="./img/heart.svg" alt="Unliked" />
+                <img src="./img/heart.svg" alt="Unliked"/>
             </div>
             <img width={125} height={112} src={imgUrl} alt="" />
             <h5>{name}</h5>
@@ -15,9 +20,7 @@ function Card({name, price, imgUrl}) {
                     <span>Цена</span>
                     <b>{price}</b>
             </div>
-            <button className="button" onClick={() => likedStatus = true}>
-                <img width={11} height={11} src={likedStatus === false ? "./img/plus.svg": "./img/liked.svg"} alt="Plus" />
-            </button>
+                <img className="imgPlus" onClick={ClickPlus} src={isAdded ===false ? "./img/btn-plus.svg": "./img/btn-checked.svg"} alt="Plus" />
         </div>
       </div>
     )

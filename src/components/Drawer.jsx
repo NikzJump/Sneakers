@@ -1,12 +1,12 @@
 import React from "react";
 
-function Drawer() {
+function Drawer({onCloseCart}) {
     return(
-        <div style={{display: 'none'}} className="overlay">
+        <div className="overlay">
             <div className="drawer">
                 <h2 className="d-flex justify-between">
                     Корзина
-                    <img className="remove-btn" src="./img/btn-remove.svg" alt="Remove" />
+                    <img onClick={onCloseCart} className="remove-btn" src="./img/btn-remove.svg" alt="Close" />
                 </h2>
                 <div className="items">
                     <div className="cart-item d-flex align-center mb-20">
